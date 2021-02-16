@@ -20,6 +20,12 @@ class ApiController {
     @Autowired
     private FakerService fakerService;
 
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String indexPage() {
+
+        return "<html><body><h1>Use urls: /api/person/{number}, /api/address/{number}, /api/book/{number}</body></html>";
+    }
+
 
     @GetMapping(path = "/api/address/{count}")
     public List<Address> fakeAddress(@PathVariable("count") int count){
@@ -32,6 +38,7 @@ class ApiController {
 
         return fakerService.makeFakePerson(count);
     }
+
     @GetMapping(path = "/api/book/{count}")
     public List<Book> fakeBook(@PathVariable("count") int count){
         return fakerService.makeFakeBook(count);
