@@ -23,7 +23,7 @@ class ApiController {
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String indexPage() {
 
-        return "<html><body><h1>Use urls: /api/person/{number}, /api/address/{number}, /api/book/{number}</body></html>";
+        return "<html><body><h3>Use urls:</h3> <h5>/api/person/{number}, /api/address/{number}, /api/book/{number}</h5></body></html>";
     }
 
 
